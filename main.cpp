@@ -58,7 +58,7 @@ unsigned load_block(istream& i, uint32 block[]);
 void save_block(ostream& o, const uint32 block[]);
 void find_collision(const uint32 IV[], uint32 msg1block0[], uint32 msg1block1[], uint32 msg2block0[], uint32 msg2block1[], bool verbose = false);
 
-#if 1
+#if 0
 
 // example trivial version with md5 initial value
 int main(int argc, char *argv[])
@@ -199,8 +199,8 @@ int main(int argc, char** argv)
 				outfn1 = prefixfn.substr(0, l-4) + "_msg1" + prefixfn.substr(l-4);
 				outfn2 = prefixfn.substr(0, l-4) + "_msg2" + prefixfn.substr(l-4);
 				unsigned i = 1;
-				while ( fs::exists(fs::path(outfn1, fs::native)) 
-					 || fs::exists(fs::path(outfn2, fs::native)))
+				while ( fs::exists(fs::path(outfn1)) 
+					 || fs::exists(fs::path(outfn2)))
 				{
 					outfn1 = prefixfn.substr(0, l-4) + "_msg1_" + lexical_cast<string>(i) + prefixfn.substr(l-4);
 					outfn2 = prefixfn.substr(0, l-4) + "_msg2_" + lexical_cast<string>(i) + prefixfn.substr(l-4);

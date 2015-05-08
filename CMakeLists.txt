@@ -12,4 +12,4 @@ set(fastcoll_SOURCES
 	main.hpp
 	md5.cpp)
 add_executable(fastcoll ${fastcoll_SOURCES})
-target_link_libraries(fastcoll boost_system-mt boost_filesystem-mt boost_program_options-mt)
+target_link_libraries(fastcoll boost_system boost_filesystem boost_program_options)
